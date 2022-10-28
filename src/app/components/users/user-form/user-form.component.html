@@ -1,0 +1,50 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+  <mat-grid-list cols="2" rowHeight="80px">
+
+    <!-- Name -->
+    <mat-grid-tile>
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label for="name">Name: </mat-label>
+        <input matInput id="name" type="text" formControlName="name">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <!-- Contact -->
+    <mat-grid-tile>
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label for="contact">Contact: </mat-label>
+        <input matInput id="contact" type="text" formControlName="contact">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <!-- Username -->
+    <mat-grid-tile>
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label for="username">Username: </mat-label>
+        <input matInput id="username" type="text" formControlName="username">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <!-- Email -->
+    <mat-grid-tile>
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label for="email">Email: </mat-label>
+        <input matInput id="email" type="email" formControlName="email">
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <!-- Password -->
+    <mat-grid-tile>
+      <mat-form-field appearance="fill" color="primary">
+        <mat-label for="password">Password: </mat-label>
+        <input matInput id="password" type="password" formControlName="password">
+      </mat-form-field>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+  <div class="button-container">
+    <button class="cancel-button" color="warning" mat-raised-button type="reset" (click)="onCancel()">Cancel</button>
+    <button class="create-button" color="primary" mat-raised-button type="submit">Submit</button>
+  </div>
+</form>
