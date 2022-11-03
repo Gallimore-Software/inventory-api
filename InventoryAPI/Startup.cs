@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using InventoryAPI.Models;
 using InventoryAPI.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Google.Protobuf.WellKnownTypes;
 
 namespace InventoryAPI
 {
@@ -65,6 +66,12 @@ namespace InventoryAPI
             {
                 endpoints.MapControllers();
             });
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                var database = scope.ServiceProvider.GetService<localdbContext>();
+                database.Database.Migrate();
+            }
 
         }
 

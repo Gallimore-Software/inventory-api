@@ -7,9 +7,16 @@ namespace InventoryAPI.Models
 {
     public partial class Supplier
     {
-        public long Id { get; set; }
+        public Supplier()
+        {
+            Items = new HashSet<Item>();
+        }
+
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Contact { get; set; }
         public string Address { get; set; }
+
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

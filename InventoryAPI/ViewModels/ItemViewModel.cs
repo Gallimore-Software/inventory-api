@@ -4,14 +4,14 @@ namespace InventoryAPI.ViewModels
 {
     public class ItemViewModel
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Category { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public long? Price { get; set; }
-        public long? Quantity { get; set; }
-        public long? Total { get; set; }
-        public long? SupplierId { get; set; }
+        public decimal? Price { get; set; }
+        public int? Quantity { get; set; }
+        public decimal? Total { get; set; }
+        public int? SupplierId { get; set; }
 
         public Item ToEntity()
         {
