@@ -71,7 +71,7 @@ namespace InventoryAPI
         public void ConfigureDatabase(IServiceCollection services)
         {
             services.AddDbContext<localdbContext>(options =>
-                options.UseMySQL(Configuration.GetConnectionString("InventoryDB")));
+                options.UseSqlServer(Configuration.GetConnectionString("InventoryDB")));
         }
     }
 }
